@@ -42,7 +42,6 @@ choice = input("1. Random algorithm\n2. Improved algorithm\n3. Both algorithms\n
 cases = []
 for i in range(1, nump + 1):
     cases.append(i)
-random.shuffle(cases)
 
 run = 1
 runs_won = 0
@@ -51,6 +50,7 @@ if choice == '1' or choice == '3':
     print("\nRunning random algorithm")
     start_time = time.time()
     while run <= runs:
+        random.shuffle(cases)
         prisoner = 1
         failed = False
         while prisoner <= nump and failed == False:
@@ -72,6 +72,7 @@ if choice == '2' or choice == '3':
     runs_won = 0
     start_time = time.time()
     while run <= runs:
+        random.shuffle(cases)
         prisoner = 1
         failed = False
         while prisoner <= nump:
